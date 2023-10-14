@@ -5,18 +5,19 @@ public class DepositCalculator {
     public static void main(String[] args) {
         new DepositCalculator().calculate();
     }
+
     double getComplexPercent(double amount, int depositPeriod) {
         double pay = amount * Math.pow((1 + 0.06 / 12), 12 * depositPeriod);
-    return rounding(pay);
+        return rounding(pay);
     }
 
     double getSimplePercent(double amount, int depositPeriod) {
-    return rounding(amount + amount * 0.06 * depositPeriod);
+        return rounding(amount + amount * 0.06 * depositPeriod);
     }
 
     double rounding(double value) {
         double scale = Math.pow(10, 2);
-    return Math.round(value * scale) / scale;
+        return Math.round(value * scale) / scale;
     }
 
     void calculate() {
